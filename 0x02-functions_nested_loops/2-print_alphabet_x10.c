@@ -2,12 +2,12 @@
 /**
  * print_alphabet_x10 - prints the alphabet in lowercase 10 times.
  *
- * Return: Always 0.
+ * Return: void
  */
 void print_alphabet_x10(void)
 {
-	int i;
 	char c;
+	int i = 0;
 
 	for (i = 0; i < 10; i++)
 	{
