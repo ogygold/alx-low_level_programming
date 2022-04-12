@@ -1,6 +1,7 @@
 #include "main.h"
 /**
  * main - Entry point
+ *
  * printing alphabets in lowercase
  */
 void print_alphabets(void)
