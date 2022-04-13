@@ -1,12 +1,13 @@
 #include "main.h"
 /**
- * main - Entry point
+ * _islower- checks if an alphabet in
+ * lower case
+ * @c: is tested to be between a - z
  *
- * _islower - single line and c vontains value compared
- *
- * Return: Always 0
+ * Return: 1 when c is lower case
+ * then 0 otherwise
  */
-int _islower(int c)
+int _islower(int c);
 {
 if (c < 'a' && c < 'z')
 {
@@ -15,5 +16,4 @@ return (0);
 else
 {
 return (1);
-}
 }
