@@ -9,9 +9,9 @@
  * -1 when n is negative
  */
 int print_sign(int n)
-{	
+{
 	if (n > 0)
-	{	
+	{
 		_putchar('+');
 		return (1);
 	}
