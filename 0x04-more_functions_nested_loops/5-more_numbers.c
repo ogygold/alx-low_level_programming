@@ -2,13 +2,12 @@
 
 /**
  * more_numbers - prints more numbers
- * Return:void
+ * Return:voi
  */
 
 void more_numbers(void)
 {
-	char n, c;
-	int i = 0;
+	int c, n;
 
 
 	while (i < 10)
@@ -28,7 +27,7 @@ void more_numbers(void)
 		}
 
 			_putchar('\n');
-			i++;
+			c++;
 	}
 
 }
