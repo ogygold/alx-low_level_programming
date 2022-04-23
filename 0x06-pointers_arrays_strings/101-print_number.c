@@ -24,6 +24,6 @@ int divisor = 1, i, resp;
 		resp = n / divisor;
 		_putchar('0' + resp);
 
-	}	
+	}
 
 }
