@@ -1,54 +1,55 @@
-#include <stdlib.h>
-#include <stdio.h>
 #include "main.h"
 
 /**
- * _strlen - calculate and return string length
- * @string: string
- * Return: string length
+ * _strlen - find length of a string
+ * @s: string
+ * Return: int
  */
 
-int _strlen(char *string)
+unsigned int _strlen(char *s)
 {
-	int i;
+	unsigned int size = 0;
 
-	for (i = 0; string[i] != '\0'; i++)
+	for (; s[size] != '\0'; size++)
 	;
-	return (i);
+	return (size);
 }
 
 /**
- * string_nconcat - concatenate s1 and n bytes of s2; return ptr to string
+ * *string_nconcat - concatenates two strings
  * @s1: string 1
  * @s2: string 2
- * @n: n bytes to concat from string 2
- * Return: pointer to concatenated string
+ * @n: first bytes of s2 to be used
+ * Return: pointer or NULL
  */
+
 char *string_nconcat(char *s1, char *s2, unsigned int n)
 {
-	char *ptr;
-	int num, len, i, j;
+	unsigned int i, j;
+	char *m;
 
-		num = n;
-
-	if (s1 == NULL) /* account for NULL strings */
+	if (s1 == NULL)
 		s1 = "";
-		if (s2 == NULL)
+	if (s2 == NULL)
 		s2 = "";
-	if (num < 0) /* account for negative n bytes */
+
+	if (n < _strlen(s2))
+		m = malloc(_strlen(s1) + n * sizeof(char) + 1);
+	else
+		m = malloc(_strlen(s1) + _strlen(s2) + 1);
+
+	if (m == 0)
 		return (NULL);
-	if (num >= _strlen(s2)) /* account for n too big */
-		num = _strlen(s2);
-	len = _strlen(s1) + num + 1; /* +1 to account for null pointer */
-	ptr = malloc(sizeof(*ptr) * len); /* malloc and check for error */
-	if (ptr == NULL)
-	return (NULL);
 
-	for (i = 0; s1[i] != '\0'; i++) /* concat */
-	ptr[i] = s1[i];
-	for (j = 0; j < num; j++)
-	ptr[i + j] = s2[j];
-	ptr[i + j] = '\0';
-	return (ptr);
+	for (i = 0; s1[i] != '\0'; i++)
+		m[i] = s1[i];
 
+	for (j = 0; s2[j] != '\0' && j < n; i++, j++)
+		m[i] = s2[j];
+
+	m[i] = '\0';
+
+	return (m);
 }
+
+
