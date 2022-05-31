@@ -1,18 +1,17 @@
 #include "main.h"
-
 /**
- * get_endianness - checks whether a machine is big endian or little
- *
- * Return: 1 if little endian, 0 otherwise
+ * get_endianness - get the endiannes of the arch
+ * Description: get the endiannes of the arch
+ * section header: the header of this function is main.h
+ * Return: 1 in little indian - 0 in big indian.
  */
 
 int get_endianness(void)
 {
-	unsigned int test = 1;
-	char *endian = (char *)&test;
+	unsigned int i = 1;
+	char *c = (char *)&i;
 
-	if (*endian)
+	if (*c)
 		return (1);
 	return (0);
-
 }
