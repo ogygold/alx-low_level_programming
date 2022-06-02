@@ -35,7 +35,7 @@ int main(int ac, char *av[])
 		}
 		if (istatus > 0)
 		{
-			ostatus = write(output_fd, buf, (ssize_t) istatus);
+			ostatus = write(output_fd, buf, (size_t) istatus);
 			if (ostatus == -1)
 				dprintf(SE, "Error: Can't write to %s\n", av[2]), exit(99);
 		}
